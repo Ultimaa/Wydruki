@@ -16,11 +16,13 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
+		final String VERSION = "v 0.1";
+				
 		try {
 			Parent parent = (Parent)FXMLLoader.load(getClass().getResource(
 					"/pl/wydruki/view/MainPane.fxml"));
 			Scene scene = new Scene(parent);
-			stage.setTitle("Wydruki v. 0.1");
+			stage.setTitle(VERSION);
 			stage.setScene(scene);
 			stage.show();
 		}catch(Exception e) {
