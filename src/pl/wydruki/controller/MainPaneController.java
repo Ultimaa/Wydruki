@@ -21,12 +21,6 @@ public class MainPaneController implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		controlPaneController.getGenerujButton().setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				contentPaneController.setPodgladText("BlaBlaBla");
-				
-			}
-			
-	});
+		controlPaneController.getGenerujButton().setOnAction(x -> contentPaneController.setPodgladText("BlaBlaBla"));
+		controlPaneController.getWyczyscButton().setOnAction(x -> contentPaneController.setPodgladText(""));
 }}
