@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.DatePicker?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
@@ -10,10 +11,12 @@
   <items>
     <AnchorPane SplitPane.resizableWithParent="false">
          <children>
-            <Label layoutX="28.0" layoutY="55.0" text="Do:" />
+            <Label layoutX="28.0" layoutY="64.0" text="Do:" />
             <Label layoutX="28.0" layoutY="21.0" text="Od:" />
-            <DatePicker layoutX="112.0" layoutY="51.0" />
-            <DatePicker layoutX="112.0" layoutY="17.0" />
+            <JFXDatePicker fx:id="odData" layoutX="68.0" layoutY="16.0" />
+            <JFXTimePicker fx:id="odCzas" layoutX="239.0" layoutY="16.0" />
+            <JFXDatePicker fx:id="doData" layoutX="68.0" layoutY="58.0" />
+            <JFXTimePicker fx:id="doCzas" layoutX="239.0" layoutY="59.0" />
          </children></AnchorPane>
     <AnchorPane SplitPane.resizableWithParent="false">
          <children>

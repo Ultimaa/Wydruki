@@ -2,5 +2,11 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/Igor/Desktop/eclipse-jee-oxygen-3a-win32-x86_64/biblioteki/jfxtras-all-8.0-r6.jar" sourcepath="C:/Users/Igor/Desktop/eclipse-jee-oxygen-3a-win32-x86_64/biblioteki/jfxtras-all-8.0-r6-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Igor/Desktop/eclipse-jee-oxygen-3a-win32-x86_64/biblioteki/jfxtras-all-8.0-r6-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Igor/Desktop/eclipse-jee-oxygen-3a-win32-x86_64/biblioteki/jfoenix-8.0.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
