@@ -10,16 +10,18 @@ public class Files {
 	{
         FileReader fileReader = new FileReader(nazwa);
         BufferedReader reader = new BufferedReader(fileReader);
+        BufferedReader a = null;
+        
 		try (
 			fileReader; 
 			reader;
 				
-		) {}
+		) {a = reader;}
 		catch (IOException e) {
 			e.printStackTrace();
 			
 		}
-		return reader; 
+		return a; 
 
 		
 

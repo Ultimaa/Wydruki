@@ -1,5 +1,6 @@
 package pl.wydruki.controller;
 
+
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -8,8 +9,6 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTimePicker;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -78,14 +77,15 @@ public class ContentPaneController implements Initializable {
 		
 		
 
-		odCzas.setValue(LocalTime.now());
+		odCzas.setValue(LocalTime.now()); // formatowanie daty na HH:mm
 		doCzas.setValue(LocalTime.now());
 		
 		odData.setValue(LocalDate.now());
 		doData.setValue(LocalDate.now());
 		
 		
-		numeryRej.setItems(NumeryRej.numeryObservableList());
+
+			numeryRej.setItems(NumeryRej.numeryObservableList());
 		
 	}
 
