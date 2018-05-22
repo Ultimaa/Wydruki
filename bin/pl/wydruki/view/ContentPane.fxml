@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
@@ -17,6 +18,8 @@
             <JFXTimePicker fx:id="odCzas" layoutX="239.0" layoutY="16.0" />
             <JFXDatePicker fx:id="doData" layoutX="68.0" layoutY="58.0" />
             <JFXTimePicker fx:id="doCzas" layoutX="239.0" layoutY="59.0" />
+            <Label layoutX="28.0" layoutY="112.0" text="Numer Rejestracyjny: " />
+            <ComboBox fx:id="numeryRej" layoutX="239.0" layoutY="108.0" prefWidth="150.0" />
          </children></AnchorPane>
     <AnchorPane SplitPane.resizableWithParent="false">
          <children>

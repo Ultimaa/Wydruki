@@ -16,7 +16,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-		final String VERSION = "v 0.01";
+		final String VERSION = "v 0.02";
 				
 		try {
 			Parent parent = (Parent)FXMLLoader.load(getClass().getResource(

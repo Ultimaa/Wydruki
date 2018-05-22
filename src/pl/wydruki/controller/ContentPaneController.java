@@ -8,10 +8,14 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTimePicker;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
-import jfxtras.scene.control.LocalDateTimeTextField;
+
+import pl.wydruki.logic.NumeryRej;
 
 public class ContentPaneController implements Initializable {
 
@@ -29,13 +33,9 @@ public class ContentPaneController implements Initializable {
 
     @FXML
     private JFXTimePicker doCzas;
-   
-
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		
-	}
+    
+    @FXML
+    private ComboBox<String> numeryRej;
 
 	public TextArea getPodgladText() {
 		return podgladText;
@@ -45,38 +45,6 @@ public class ContentPaneController implements Initializable {
 		podgladText.setText(text);
 	}
 
-	public JFXDatePicker getOdData() {
-		return odData;
-	}
-
-	public void setOdData(JFXDatePicker odData) {
-		this.odData = odData;
-	}
-
-	public JFXTimePicker getOdCzas() {
-		return odCzas;
-	}
-
-	public void setOdCzas(JFXTimePicker odCzas) {
-		this.odCzas = odCzas;
-	}
-
-	public JFXDatePicker getDoData() {
-		return doData;
-	}
-
-	public void setDoData(JFXDatePicker doData) {
-		this.doData = doData;
-	}
-
-	public JFXTimePicker getDoCzas() {
-		return doCzas;
-	}
-	
-
-	public void setDoCzas(JFXTimePicker doCzas) {
-		this.doCzas = doCzas;
-	}
 	
 	public LocalDate odData()
 	{
@@ -100,6 +68,25 @@ public class ContentPaneController implements Initializable {
 	{
 		LocalTime czas = doCzas.getValue();
 		return czas;
+	}
+	
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		odCzas.setIs24HourView(true);  // Naprawic wyœwietlanie 24h po wybraniu  
+		doCzas.setIs24HourView(true);
+		
+		
+
+		odCzas.setValue(LocalTime.now());
+		doCzas.setValue(LocalTime.now());
+		
+		odData.setValue(LocalDate.now());
+		doData.setValue(LocalDate.now());
+		
+		
+		numeryRej.setItems(NumeryRej.numeryObservableList());
+		
 	}
 
 }
