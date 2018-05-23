@@ -8,7 +8,8 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<SplitPane dividerPositions="0.5050167224080268" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.wydruki.controller.ContentPaneController">
+<SplitPane dividerPositions="0.5050167224080268" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" 
+fx:controller="pl.wydruki.controller.ContentPaneController">
   <items>
     <AnchorPane SplitPane.resizableWithParent="false">
          <children>
