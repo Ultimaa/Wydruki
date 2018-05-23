@@ -20,10 +20,5 @@ public class MainPaneController implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		controlPaneController.getGenerujButton().setOnAction(x -> contentPaneController.setPodgladText(contentPaneController.doData().toString()+" "
-				+contentPaneController.doCzas().toString()+" "
-				+contentPaneController.odData().toString()+" "
-				+contentPaneController.odCzas().toString()));
-		controlPaneController.getWyczyscButton().setOnAction(x -> contentPaneController.setPodgladText(""));
 
 }}

@@ -15,58 +15,59 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 
 import pl.wydruki.logic.NumeryRej;
+import pl.wydruki.logic.Temp;
 
 public class ContentPaneController implements Initializable {
 
     @FXML
     private TextArea podgladText;
-
     @FXML
     private JFXDatePicker odData;
-    
     @FXML
     private JFXTimePicker odCzas;
-
     @FXML
     private JFXDatePicker doData;
-
     @FXML
     private JFXTimePicker doCzas;
-    
     @FXML
     private ComboBox<String> numeryRej;
+    @FXML
+    private ComboBox<Double> tempOd;
+    @FXML
+    private ComboBox<Double> tempDo;
+    
+
+	public JFXDatePicker getOdData() {
+		return odData;
+	}
+
+
+	public JFXTimePicker getOdCzas() {
+		return odCzas;
+	}
+
+	public JFXDatePicker getDoData() {
+		return doData;
+	}
+
+	public JFXTimePicker getDoCzas() {
+		return doCzas;
+	}
+
+	public ComboBox<String> getNumeryRej() {
+		return numeryRej;
+	}
+
+	public ComboBox<Double> getTempOd() {
+		return tempOd;
+	}
+
+	public ComboBox<Double> getTempDo() {
+		return tempDo;
+	}
 
 	public TextArea getPodgladText() {
 		return podgladText;
-	}
-
-	public void setPodgladText(String text) {
-		podgladText.setText(text);
-	}
-
-	
-	public LocalDate odData()
-	{
-		LocalDate data = odData.getValue();
-		return data;
-	}
-	
-	public LocalTime odCzas()
-	{
-		LocalTime czas = odCzas.getValue();
-		return czas;
-	}
-	
-	public LocalDate doData()
-	{
-		LocalDate data = doData.getValue();
-		return data;
-	}
-	
-	public LocalTime doCzas()
-	{
-		LocalTime czas = doCzas.getValue();
-		return czas;
 	}
 	
 
@@ -85,7 +86,14 @@ public class ContentPaneController implements Initializable {
 		
 		
 
-			numeryRej.setItems(NumeryRej.numeryObservableList());
+		numeryRej.setItems(NumeryRej.numeryObservableList());
+		numeryRej.setValue(NumeryRej.numeryObservableList().get(0));
+		
+		tempOd.setItems(Temp.temperatury());
+		tempDo.setItems(Temp.temperatury());
+		
+		tempOd.setValue(Temp.temperatury().get(54));
+		tempDo.setValue(Temp.temperatury().get(54));
 		
 	}
 
