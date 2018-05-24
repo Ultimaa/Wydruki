@@ -3,7 +3,6 @@ package pl.wydruki.logic;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import pl.wydruki.controller.ContentPaneController;
 
 public class Generuj {
 	
@@ -40,6 +39,9 @@ public class Generuj {
 		String dataCzasKoniec = dataKoniec+" "+czasKoniec;
 		
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+		DateTimeFormatter godzinyMinuty = DateTimeFormatter.ofPattern("HH:mm");
+		
+		
 		LocalDateTime start = LocalDateTime.parse(dataCzasStart, formatter);
 		LocalDateTime koniec = LocalDateTime.parse(dataCzasKoniec, formatter);
 		
@@ -48,14 +50,18 @@ public class Generuj {
 		
 		for(int i = 0; i <= 100; i++)
 		{
-			start = start.plusMinutes(120);
-			txt.append(start.toString());
-			txt.append(numerRej);
-			txt.append("\n");
+
 		}
+		
 		do {
-			
-		}while(true);
+			start = start.plusMinutes(15);
+			txt.append(start.format(godzinyMinuty));
+			txt.append("  ");
+			txt.append(tempOd.toString());
+			txt.append("  ");
+			txt.append(koniec.format(formatter));
+			txt.append("\n");
+		}while(start.isBefore(koniec));
 			
 		 
 		return txt.toString();

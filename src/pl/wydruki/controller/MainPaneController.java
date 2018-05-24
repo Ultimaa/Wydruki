@@ -34,8 +34,8 @@ public class MainPaneController implements Initializable {
 				String dataS = contentPaneController.getOdData().getValue().toString();
 				String czasS = contentPaneController.getOdCzas().getValue().toString();
 				
-				String dataK = contentPaneController.getOdData().getValue().toString();
-				String czasK = contentPaneController.getOdCzas().getValue().toString();
+				String dataK = contentPaneController.getDoData().getValue().toString();
+				String czasK = contentPaneController.getDoCzas().getValue().toString();
 				
 				double tempS = contentPaneController.getTempOd().getValue();
 				double tempK = contentPaneController.getTempDo().getValue();
