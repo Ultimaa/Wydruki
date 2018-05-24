@@ -4,6 +4,7 @@ package pl.wydruki.controller;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXDatePicker;
@@ -77,9 +78,12 @@ public class ContentPaneController implements Initializable {
 		doCzas.setIs24HourView(true);
 		
 		
-
-		odCzas.setValue(LocalTime.now()); // formatowanie daty na HH:mm
-		doCzas.setValue(LocalTime.now());
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+		LocalTime teraz = LocalTime.parse(LocalTime.now().format(formatter));
+		
+		odCzas.setValue(teraz); // formatowanie daty na HH:mm
+		doCzas.setValue(teraz);
+		
 		
 		odData.setValue(LocalDate.now());
 		doData.setValue(LocalDate.now());
