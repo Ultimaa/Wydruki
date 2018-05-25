@@ -23,6 +23,9 @@ public class MainPaneController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		generujButton();
+		//Wyczysc
+		controlPaneController.getWyczyscButton().setOnAction(
+				x -> contentPaneController.getPodgladText().setText(""));
 		
 	}
 

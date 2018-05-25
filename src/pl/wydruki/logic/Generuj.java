@@ -40,27 +40,39 @@ public class Generuj {
 		
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 		DateTimeFormatter godzinyMinuty = DateTimeFormatter.ofPattern("HH:mm");
+		DateTimeFormatter dzienMiesiacRok = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		
 		
 		LocalDateTime start = LocalDateTime.parse(dataCzasStart, formatter);
 		LocalDateTime koniec = LocalDateTime.parse(dataCzasKoniec, formatter);
 		
+		LocalDateTime tmp = LocalDateTime.of
+				(start.getYear(), start.getMonth(), start.getDayOfMonth(), 23, 59);
 		
 		StringBuilder txt = new StringBuilder();
 		
-		for(int i = 0; i <= 100; i++)
-		{
+		txt.append("N I C O \n");
+		txt.append(numerRej+"  SNR 2313213 \n");
+		txt.append(start.toString()+"\n");
+		txt.append("T1 SENSOR 1 \n");
+		txt.append("T2 SENSOR 2 \n");
+		txt.append("         T1     T2 \n");
 
-		}
-		
 		do {
-			start = start.plusMinutes(15);
+			if(start.isAfter(tmp))
+			{
+				txt.append(tmp.format(dzienMiesiacRok));
+				txt.append("\n");
+				tmp = tmp.plusDays(1);
+			}
 			txt.append(start.format(godzinyMinuty));
-			txt.append("  ");
+			txt.append("    ");
 			txt.append(tempOd.toString());
 			txt.append("  ");
-			txt.append(koniec.format(formatter));
+			txt.append(tempDo.toString());
+			txt.append("    ");
 			txt.append("\n");
+			start = start.plusMinutes(15);
 		}while(start.isBefore(koniec));
 			
 		 
