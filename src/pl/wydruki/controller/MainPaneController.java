@@ -40,12 +40,12 @@ public class MainPaneController implements Initializable {
 				String dataK = contentPaneController.getDoData().getValue().toString();
 				String czasK = contentPaneController.getDoCzas().getValue().toString();
 				
-				double tempS = contentPaneController.getTempOd().getValue();
-				double tempK = contentPaneController.getTempDo().getValue();
+				int tempS = contentPaneController.getTempOd().getValue();
+				int tempTolerancja = contentPaneController.tempTolerancja().getValue();
 				
 				String numerR = contentPaneController.getNumeryRej().getValue();
 				
-				Generuj a = new Generuj(dataS, czasS, dataK, czasK, tempS, tempK, numerR);
+				Generuj a = new Generuj(dataS, czasS, dataK, czasK, tempS, tempTolerancja, numerR);
 				contentPaneController.getPodgladText().setText(a.generuj());
 				
 			}

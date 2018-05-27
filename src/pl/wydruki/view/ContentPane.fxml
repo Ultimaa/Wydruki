@@ -20,11 +20,10 @@
             <JFXTimePicker fx:id="doCzas" layoutX="239.0" layoutY="59.0" />
             <Label layoutX="28.0" layoutY="112.0" text="Numer Rejestracyjny: " AnchorPane.leftAnchor="28.0" />
             <ComboBox fx:id="numeryRej" layoutX="221.0" layoutY="108.0" prefHeight="25.0" prefWidth="171.0" />
-            <Label layoutX="25.0" layoutY="162.0" text="Przedział temperatury: " AnchorPane.leftAnchor="25.0" />
+            <Label layoutX="25.0" layoutY="162.0" text="Temperatura:" AnchorPane.leftAnchor="25.0" />
             <ComboBox fx:id="tempOd" layoutX="221.0" layoutY="158.0" prefHeight="25.0" prefWidth="75.0" />
-            <ComboBox fx:id="tempDo" layoutX="314.0" layoutY="158.0" prefHeight="25.0" prefWidth="75.0" />
-            <Label layoutX="344.0" layoutY="141.0" text="Do" />
-            <Label layoutX="249.0" layoutY="141.0" prefWidth="19.0" text="Od" />
+            <ComboBox fx:id="tempTolerancja" layoutX="314.0" layoutY="158.0" prefHeight="25.0" prefWidth="75.0" />
+            <Label layoutX="324.0" layoutY="141.0" text="Tolerancja" />
          </children></AnchorPane>
     <AnchorPane SplitPane.resizableWithParent="false">
          <children>

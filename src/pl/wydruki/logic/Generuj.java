@@ -11,8 +11,8 @@ public class Generuj {
 	private String czasStart;
 	private String czasKoniec;
 	
-	private Double tempOd;
-	private Double tempDo;
+	private int tempOd;
+	private int tolerancja;
 	
 	private String numerRej;
 	
@@ -20,15 +20,15 @@ public class Generuj {
 		
 	}
 
-	public Generuj(String dataStart, String czasStart, String dataKoniec, String czasKoniec, Double tempOd,
-			Double tempDo, String numerRej) 
+	public Generuj(String dataStart, String czasStart, String dataKoniec, String czasKoniec, int tempOd,
+			int tolerancja, String numerRej) 
 	{
 		this.dataStart = dataStart;
 		this.dataKoniec = dataKoniec;
 		this.czasStart = czasStart;
 		this.czasKoniec = czasKoniec;
 		this.tempOd = tempOd;
-		this.tempDo = tempDo;
+		this.tolerancja = tolerancja;
 		this.numerRej = numerRej;
 	}
 
@@ -50,14 +50,14 @@ public class Generuj {
 				(start.getYear(), start.getMonth(), start.getDayOfMonth(), 23, 59);
 		
 		StringBuilder txt = new StringBuilder();
+		Temp temp = new Temp(tempOd, tolerancja);
 		
 		txt.append("N I C O \n");
-		txt.append(numerRej+"  SNR 2313213 \n");
+		txt.append(numerRej+" "+NumeryRej.numerySeria().get(numerRej));
 		txt.append(start.toString()+"\n");
 		txt.append("T1 SENSOR 1 \n");
 		txt.append("T2 SENSOR 2 \n");
 		txt.append("         T1     T2 \n");
-
 		do {
 			if(start.isAfter(tmp))
 			{
@@ -67,10 +67,9 @@ public class Generuj {
 			}
 			txt.append(start.format(godzinyMinuty));
 			txt.append("    ");
-			txt.append(tempOd.toString());
+			//txt.append(rand.nextDouble()* tempDo);
 			txt.append("  ");
-			txt.append(tempDo.toString());
-			txt.append("    ");
+			txt.append(temp.generujTemp());
 			txt.append("\n");
 			start = start.plusMinutes(15);
 		}while(start.isBefore(koniec));

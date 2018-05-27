@@ -33,9 +33,9 @@ public class ContentPaneController implements Initializable {
     @FXML
     private ComboBox<String> numeryRej;
     @FXML
-    private ComboBox<Double> tempOd;
+    private ComboBox<Integer> tempOd;
     @FXML
-    private ComboBox<Double> tempDo;
+    private ComboBox<Integer> tempTolerancja;
     
 
 	public JFXDatePicker getOdData() {
@@ -59,12 +59,12 @@ public class ContentPaneController implements Initializable {
 		return numeryRej;
 	}
 
-	public ComboBox<Double> getTempOd() {
+	public ComboBox<Integer> getTempOd() {
 		return tempOd;
 	}
 
-	public ComboBox<Double> getTempDo() {
-		return tempDo;
+	public ComboBox<Integer> tempTolerancja() {
+		return tempTolerancja;
 	}
 
 	public TextArea getPodgladText() {
@@ -94,10 +94,10 @@ public class ContentPaneController implements Initializable {
 		numeryRej.setValue(NumeryRej.numeryObservableList().get(0));
 		
 		tempOd.setItems(Temp.temperatury());
-		tempDo.setItems(Temp.temperatury());
+		tempTolerancja.setItems(Temp.tolerancja());
 		
-		tempOd.setValue(Temp.temperatury().get(54));
-		tempDo.setValue(Temp.temperatury().get(54));
+		tempOd.setValue(Temp.temperatury().get(30));
+		tempTolerancja.setValue(Temp.tolerancja().get(1));
 		
 	}
 
