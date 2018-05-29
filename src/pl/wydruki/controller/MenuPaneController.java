@@ -59,6 +59,7 @@ public class MenuPaneController implements Initializable {
 				Stage stage = new Stage();
 				stage.setTitle("");
 				stage.setScene(scene);
+				stage.setAlwaysOnTop(true);
 				stage.show();	
 				
 			}
