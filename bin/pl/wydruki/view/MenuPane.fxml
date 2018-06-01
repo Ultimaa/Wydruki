@@ -5,27 +5,24 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" 
-fx:controller="pl.wydruki.controller.MenuPaneController">
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.wydruki.controller.MenuPaneController">
    <children>
-      <MenuBar fx:id="aa" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <MenuBar AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
-          <Menu fx:id="bbb" mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Plik">
             <items>
-              <MenuItem mnemonicParsing="false" text="Open" />
                   <MenuItem fx:id="close" mnemonicParsing="false" text="Zamknij" />
             </items>
           </Menu>
-          <Menu fx:id="ccc" mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Edytuj">
             <items>
-              <MenuItem fx:id="option" mnemonicParsing="false" text="Ustawienia" />
+              <MenuItem fx:id="setErase" mnemonicParsing="false" text="Dodaj/Usuń numery rej." />
             </items>
           </Menu>
-          <Menu fx:id="ddd" mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="aboutApp" mnemonicParsing="false" text="O aplikacji" />
+               </items></Menu>
         </menus>
       </MenuBar>
    </children>

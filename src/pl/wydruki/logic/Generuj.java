@@ -53,7 +53,7 @@ public class Generuj {
 		Temp temp = new Temp(tempOd, tolerancja);
 		
 		txt.append("N I C O \n");
-		txt.append(numerRej+" "+NumeryRej.numerySeria().get(numerRej));
+		txt.append(numerRej+" "+NumeryRej.numerySeria().get(numerRej)+"\n");
 		txt.append(start.toString()+"\n");
 		txt.append("T1 SENSOR 1 \n");
 		txt.append("T2 SENSOR 2 \n");

@@ -12,6 +12,7 @@ import com.jfoenix.controls.JFXTimePicker;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 
@@ -36,6 +37,8 @@ public class ContentPaneController implements Initializable {
     private ComboBox<Integer> tempOd;
     @FXML
     private ComboBox<Integer> tempTolerancja;
+    @FXML
+    private Button refresh;
     
 
 	public JFXDatePicker getOdData() {
@@ -89,9 +92,9 @@ public class ContentPaneController implements Initializable {
 		doData.setValue(LocalDate.now());
 		
 		
-
 		numeryRej.setItems(NumeryRej.numeryObservableList());
 		numeryRej.setValue(NumeryRej.numeryObservableList().get(0));
+		refresh.setOnAction(x -> numeryRej.setItems(NumeryRej.numeryObservableList()));
 		
 		tempOd.setItems(Temp.temperatury());
 		tempTolerancja.setItems(Temp.tolerancja());
@@ -100,6 +103,7 @@ public class ContentPaneController implements Initializable {
 		tempTolerancja.setValue(Temp.tolerancja().get(1));
 		
 	}
+
 
 }
 	

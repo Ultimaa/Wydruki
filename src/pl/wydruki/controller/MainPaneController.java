@@ -3,13 +3,14 @@ package pl.wydruki.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import pl.wydruki.logic.Generuj;
 
-public class MainPaneController implements Initializable {
+public class MainPaneController implements Initializable  {
 	
 	@FXML
 	private ContentPaneController contentPaneController;
@@ -26,7 +27,7 @@ public class MainPaneController implements Initializable {
 		//Wyczysc
 		controlPaneController.getWyczyscButton().setOnAction(
 				x -> contentPaneController.getPodgladText().setText(""));
-		
+	
 	}
 
 	public void generujButton()

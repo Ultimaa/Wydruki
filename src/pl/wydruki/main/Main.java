@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-	
+	public final static String VERSION = "0.7";
 
 	public static void main(String[] args) {
 		launch(args);
@@ -15,13 +15,13 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-		final String VERSION = "v 0.02";
+
 				
 		try {
 			Parent parent = (Parent)FXMLLoader.load(getClass().getResource(
 					"/pl/wydruki/view/MainPane.fxml"));
 			Scene scene = new Scene(parent);
-			stage.setTitle(VERSION);
+			stage.setTitle("Aplikacja \"Wydruki\" wersja : "+VERSION);
 			stage.setScene(scene);
 			stage.show();
 		}catch(Exception e) {

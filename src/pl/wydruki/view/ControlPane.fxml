@@ -4,10 +4,14 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.HBox?>
 
-
 <HBox xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.wydruki.controller.ControlPaneController">
    <children>
       <Button fx:id="generujButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Generuj" HBox.hgrow="ALWAYS">
+         <HBox.margin>
+            <Insets left="50.0" />
+         </HBox.margin>
+      </Button>
+      <Button fx:id="generujPDF" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Generuj PDF" HBox.hgrow="ALWAYS">
          <HBox.margin>
             <Insets left="50.0" right="50.0" />
          </HBox.margin>

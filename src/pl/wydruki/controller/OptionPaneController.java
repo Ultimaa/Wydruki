@@ -22,11 +22,31 @@ public class OptionPaneController implements Initializable {
     private TextField nowyNumer;
 
     @FXML
-    private Button zapiszNowy;@Override
+    private Button zapiszNowy;
+    
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
     	numeryRej.setItems(NumeryRej.numeryObservableList());
-    	
-    	
+    	zapiszNowy.setOnAction(x -> zapiszNowyNumer());
+    	usunZaznaczony.setOnAction(x -> usunNumer());
+    }
+    private void zapiszNowyNumer()
+    {
+    	String wartoscPola = nowyNumer.getText();
+    	NumeryRej.dodajNowyNumer(wartoscPola, null, true);
+    	numeryRej.setItems(NumeryRej.numeryObservableList());
+    }
+    private void usunNumer() 
+    {
+    	String wybranyNumer = numeryRej.getValue();
+    	if(wybranyNumer == null)
+    		numeryRej.setValue("Wybierz poprany numer!");
+    	else 
+    	{
+    		NumeryRej.usunNumer(wybranyNumer);
+    	}
+    	numeryRej.setItems(NumeryRej.numeryObservableList());
+
     }
 
 }

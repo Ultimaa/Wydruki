@@ -2,13 +2,14 @@
 
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<SplitPane dividerPositions="0.5050167224080268" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.wydruki.controller.ContentPaneController">
+<SplitPane dividerPositions="0.5050167224080268" stylesheets="@style.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.wydruki.controller.ContentPaneController">
   <items>
     <AnchorPane SplitPane.resizableWithParent="false">
          <children>
@@ -24,6 +25,7 @@
             <ComboBox fx:id="tempOd" layoutX="221.0" layoutY="158.0" prefHeight="25.0" prefWidth="75.0" />
             <ComboBox fx:id="tempTolerancja" layoutX="314.0" layoutY="158.0" prefHeight="25.0" prefWidth="75.0" />
             <Label layoutX="324.0" layoutY="141.0" text="Tolerancja" />
+            <Button id="refresh" fx:id="refresh" layoutX="396.0" layoutY="108.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="29.0" />
          </children></AnchorPane>
     <AnchorPane SplitPane.resizableWithParent="false">
          <children>
