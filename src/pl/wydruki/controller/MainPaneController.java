@@ -1,14 +1,16 @@
 package pl.wydruki.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import pl.wydruki.logic.Generuj;
+import pl.wydruki.logic.GenerujWord;
+
 
 public class MainPaneController implements Initializable  {
 	
@@ -27,6 +29,14 @@ public class MainPaneController implements Initializable  {
 		//Wyczysc
 		controlPaneController.getWyczyscButton().setOnAction(
 				x -> contentPaneController.getPodgladText().setText(""));
+		controlPaneController.getGenerujPDF().setOnAction(x -> {
+			try {
+				GenerujWord.generateWordDoc();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
 	
 	}
 
@@ -43,10 +53,10 @@ public class MainPaneController implements Initializable  {
 				
 				int tempS = contentPaneController.getTempOd().getValue();
 				int tempTolerancja = contentPaneController.tempTolerancja().getValue();
-				
+				int czas = contentPaneController.getCzas().getValue();
 				String numerR = contentPaneController.getNumeryRej().getValue();
 				
-				Generuj a = new Generuj(dataS, czasS, dataK, czasK, tempS, tempTolerancja, numerR);
+				Generuj a = new Generuj(dataS, czasS, dataK, czasK, tempS, tempTolerancja, czas, numerR);
 				contentPaneController.getPodgladText().setText(a.generuj());
 				
 			}

@@ -13,6 +13,7 @@ public class Generuj {
 	
 	private int tempOd;
 	private int tolerancja;
+	private int czas;
 	
 	private String numerRej;
 	
@@ -21,7 +22,7 @@ public class Generuj {
 	}
 
 	public Generuj(String dataStart, String czasStart, String dataKoniec, String czasKoniec, int tempOd,
-			int tolerancja, String numerRej) 
+			int tolerancja, int czas, String numerRej) 
 	{
 		this.dataStart = dataStart;
 		this.dataKoniec = dataKoniec;
@@ -30,6 +31,7 @@ public class Generuj {
 		this.tempOd = tempOd;
 		this.tolerancja = tolerancja;
 		this.numerRej = numerRej;
+		this.czas = czas;
 	}
 
 
@@ -71,7 +73,7 @@ public class Generuj {
 			txt.append("  ");
 			txt.append(temp.generujTemp());
 			txt.append("\n");
-			start = start.plusMinutes(15);
+			start = start.plusMinutes(czas);
 		}while(start.isBefore(koniec));
 			
 		 

@@ -2,6 +2,7 @@ package pl.wydruki.logic;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -19,7 +20,6 @@ import javafx.collections.ObservableList;
 public class NumeryRej {
 	final static String SCIEZKA = "rej.txt";
 	
-	
 	//Lista na potrzeby ComboBoxow
 	public static ObservableList<String> numeryObservableList()
 	{
@@ -27,6 +27,16 @@ public class NumeryRej {
 		boolean empty = true;
 		ObservableList<String> lista =
 				FXCollections.observableArrayList();
+		
+		File file = new File(SCIEZKA);
+		if(!file.exists())
+		{
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 
 		try(
 				FileReader fileReader = new FileReader(SCIEZKA);

@@ -10,6 +10,8 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTimePicker;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -39,6 +41,8 @@ public class ContentPaneController implements Initializable {
     private ComboBox<Integer> tempTolerancja;
     @FXML
     private Button refresh;
+    @FXML
+    private ComboBox<Integer> czas;
     
 
 	public JFXDatePicker getOdData() {
@@ -75,6 +79,11 @@ public class ContentPaneController implements Initializable {
 	}
 	
 
+	public ComboBox<Integer> getCzas() {
+		return czas;
+	}
+
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		odCzas.setIs24HourView(true);  // Naprawic wyœwietlanie 24h po wybraniu  
@@ -91,6 +100,13 @@ public class ContentPaneController implements Initializable {
 		odData.setValue(LocalDate.now());
 		doData.setValue(LocalDate.now());
 		
+		ObservableList<Integer> a = FXCollections.observableArrayList();
+		for(int i=15; i<=60; i+=15)
+		{
+			a.add(i);
+		}
+		czas.setItems(a);
+		czas.setValue(a.get(0));
 		
 		numeryRej.setItems(NumeryRej.numeryObservableList());
 		numeryRej.setValue(NumeryRej.numeryObservableList().get(0));
