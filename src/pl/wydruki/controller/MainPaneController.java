@@ -9,7 +9,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import pl.wydruki.logic.Generuj;
-import pl.wydruki.logic.GenerujWord;
 
 
 public class MainPaneController implements Initializable  {
@@ -30,12 +29,6 @@ public class MainPaneController implements Initializable  {
 		controlPaneController.getWyczyscButton().setOnAction(
 				x -> contentPaneController.getPodgladText().setText(""));
 		controlPaneController.getGenerujPDF().setOnAction(x -> {
-			try {
-				GenerujWord.generateWordDoc();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		});
 	
 	}
