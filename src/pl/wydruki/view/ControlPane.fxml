@@ -11,7 +11,7 @@
             <Insets left="50.0" />
          </HBox.margin>
       </Button>
-      <Button fx:id="generujPDF" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Generuj PDF" HBox.hgrow="ALWAYS">
+      <Button fx:id="drukuj" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Drukuj" HBox.hgrow="ALWAYS">
          <HBox.margin>
             <Insets left="50.0" right="50.0" />
          </HBox.margin>

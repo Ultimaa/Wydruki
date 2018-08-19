@@ -16,14 +16,14 @@ public class ControlPaneController implements Initializable {
     private Button wyczyscButton;
     
     @FXML
-    private Button generujPDF;
+    private Button drukuj;
 
-	public Button getGenerujPDF() {
-		return generujPDF;
+	public Button getDrukuj() {
+		return drukuj;
 	}
 
-	public void setGenerujPDF(Button generujPDF) {
-		this.generujPDF = generujPDF;
+	public void setDrukuj(Button drukuj) {
+		this.drukuj = drukuj;
 	}
 
 	public Button getGenerujButton() {

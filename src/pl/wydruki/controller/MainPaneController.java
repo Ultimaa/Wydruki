@@ -1,6 +1,5 @@
 package pl.wydruki.controller;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -9,6 +8,19 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import pl.wydruki.logic.Generuj;
+
+import javafx.application.Application;
+import javafx.print.PrinterJob;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
+import javafx.stage.Stage;
 
 
 public class MainPaneController implements Initializable  {
@@ -28,8 +40,12 @@ public class MainPaneController implements Initializable  {
 		//Wyczysc
 		controlPaneController.getWyczyscButton().setOnAction(
 				x -> contentPaneController.getPodgladText().setText(""));
-		controlPaneController.getGenerujPDF().setOnAction(x -> {
-		});
+		controlPaneController.getDrukuj().setOnAction(
+				x ->{
+					TextFlow printArea = new TextFlow(new Text(contentPaneController.getPodgladText().toString()));
+					printSetup(contentPaneController.getPodgladText(), printArea);
+				} 
+				);
 	
 	}
 
@@ -55,4 +71,36 @@ public class MainPaneController implements Initializable  {
 			}
 		});	
 	}
+	
+	private void printSetup(Node node, TextFlow a) 
+	{
+		// Create the PrinterJob		
+		PrinterJob job = PrinterJob.createPrinterJob();
+	
+		if (job == null) 
+		{
+			return;
+		}
+
+		// Show the print setup dialog
+		boolean proceed = job.showPrintDialog(node.getScene().getWindow());
+		
+		if (proceed) 
+		{
+			print(job, a);
+		}
+	}
+	
+	private void print(PrinterJob job, Node node) 
+	{
+		// Set the Job Status Message
+		
+		// Print the node
+		boolean printed = job.printPage(node);
+	
+		if (printed) 
+		{
+			job.endJob();
+		}
+	}		
 }

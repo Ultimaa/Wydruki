@@ -7,12 +7,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Ultimaa/Desktop/Java/Wydruki/lib/jfoenix-9.0.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ultimaa/Desktop/Java/Wydruki/lib/Apach POI/commons-codec-1.10.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ultimaa/Desktop/Java/Wydruki/lib/Apach POI/commons-collections4-4.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ultimaa/Desktop/Java/Wydruki/lib/Apach POI/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ultimaa/Desktop/Java/Wydruki/lib/Apach POI/poi-3.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ultimaa/Desktop/Java/Wydruki/lib/Apach POI/poi-ooxml-3.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ultimaa/Desktop/Java/Wydruki/lib/Apach POI/poi-ooxml-schemas-3.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ultimaa/Desktop/Java/Wydruki/lib/Apach POI/xmlbeans-2.6.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
