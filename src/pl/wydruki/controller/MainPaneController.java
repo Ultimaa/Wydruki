@@ -18,6 +18,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
@@ -42,7 +44,10 @@ public class MainPaneController implements Initializable  {
 				x -> contentPaneController.getPodgladText().setText(""));
 		controlPaneController.getDrukuj().setOnAction(
 				x ->{
-					TextFlow printArea = new TextFlow(new Text(contentPaneController.getPodgladText().toString()));
+					Text printtext = new Text(contentPaneController.getPodgladText().getText());
+					printtext.setFont(Font.font ("Verdana", 7));
+					printtext.setFill(Color.RED);
+					TextFlow printArea = new TextFlow(printtext);
 					printSetup(contentPaneController.getPodgladText(), printArea);
 				} 
 				);
