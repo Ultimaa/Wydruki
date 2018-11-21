@@ -8,9 +8,13 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import pl.wydruki.logic.Generuj;
-
 import javafx.application.Application;
+import javafx.print.PageLayout;
+import javafx.print.PageOrientation;
+import javafx.print.Paper;
+import javafx.print.Printer;
 import javafx.print.PrinterJob;
+import javafx.print.*;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -22,6 +26,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
 
 
@@ -81,7 +86,10 @@ public class MainPaneController implements Initializable  {
 	{
 		// Create the PrinterJob		
 		PrinterJob job = PrinterJob.createPrinterJob();
-	
+		Printer b = Printer.getDefaultPrinter();
+		//Paper c = new Paper("58mm", 58, 200, Units.MM);
+		PageLayout ustawieniaStrony = b.createPageLayout(Paper.EXECUTIVE, PageOrientation.PORTRAIT, 0.02, 0.02, 0.02, 0.02);
+		job.getJobSettings().setPageLayout(ustawieniaStrony);
 		if (job == null) 
 		{
 			return;
