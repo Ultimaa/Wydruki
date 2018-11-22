@@ -117,6 +117,7 @@ public class ContentPaneController implements Initializable {
 		
 		tempOd.setValue(Temp.temperatury().get(30));
 		tempTolerancja.setValue(Temp.tolerancja().get(1));
+		
 
 		
 	}

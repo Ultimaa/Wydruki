@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import pl.wydruki.logic.Drukuj;
 import pl.wydruki.logic.Generuj;
 import javafx.application.Application;
 import javafx.print.PageLayout;
@@ -41,6 +42,7 @@ public class MainPaneController implements Initializable  {
 	@FXML
 	private MenuPaneController menuPaneController;
 	
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		generujButton();
@@ -49,11 +51,23 @@ public class MainPaneController implements Initializable  {
 				x -> contentPaneController.getPodgladText().setText(""));
 		controlPaneController.getDrukuj().setOnAction(
 				x ->{
+					String dataS = contentPaneController.getOdData().getValue().toString();
+					String czasS = contentPaneController.getOdCzas().getValue().toString();
+					
+					String dataK = contentPaneController.getDoData().getValue().toString();
+					String czasK = contentPaneController.getDoCzas().getValue().toString();
+					
+					int tempS = contentPaneController.getTempOd().getValue();
+					int tempTolerancja = contentPaneController.tempTolerancja().getValue();
+					int czas = contentPaneController.getCzas().getValue();
+					String numerR = contentPaneController.getNumeryRej().getValue();
+					
+					Generuj a = new Generuj(dataS, czasS, dataK, czasK, tempS, tempTolerancja, czas, numerR);
 					Text printtext = new Text(contentPaneController.getPodgladText().getText());
 					printtext.setFont(Font.font ("Verdana", 7));
 					printtext.setFill(Color.RED);
 					TextFlow printArea = new TextFlow(printtext);
-					printSetup(contentPaneController.getPodgladText(), printArea);
+					Drukuj.printSetup(contentPaneController.getPodgladText(), printArea);
 				} 
 				);
 	
@@ -82,38 +96,5 @@ public class MainPaneController implements Initializable  {
 		});	
 	}
 	
-	private void printSetup(Node node, TextFlow a) 
-	{
-		// Create the PrinterJob		
-		PrinterJob job = PrinterJob.createPrinterJob();
-		Printer b = Printer.getDefaultPrinter();
-		//Paper c = new Paper("58mm", 58, 200, Units.MM);
-		PageLayout ustawieniaStrony = b.createPageLayout(Paper.EXECUTIVE, PageOrientation.PORTRAIT, 0.02, 0.02, 0.02, 0.02);
-		job.getJobSettings().setPageLayout(ustawieniaStrony);
-		if (job == null) 
-		{
-			return;
-		}
-
-		// Show the print setup dialog
-		boolean proceed = job.showPrintDialog(node.getScene().getWindow());
 		
-		if (proceed) 
-		{
-			print(job, a);
-		}
-	}
-	
-	private void print(PrinterJob job, Node node) 
-	{
-		// Set the Job Status Message
-		
-		// Print the node
-		boolean printed = job.printPage(node);
-	
-		if (printed) 
-		{
-			job.endJob();
-		}
-	}		
 }
