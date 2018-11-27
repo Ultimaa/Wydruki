@@ -9,83 +9,17 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
 public class Generuj {
+
+	private Text naglowek = new Text();
+	private Text reszta_txt = new Text();
 	
-	private String dataStart;
-	private String dataKoniec;
-	private String czasStart;
-	private String czasKoniec;
-	
-	private int tempOd;
-	private int tolerancja;
-	private int czas;
-	
-	private String numerRej;
-	
+	private String generuj = new String();
 	public Generuj() {
 		
 	}
 
 	public Generuj(String dataStart, String czasStart, String dataKoniec, String czasKoniec, int tempOd,
 			int tolerancja, int czas, String numerRej) 
-	{
-		this.dataStart = dataStart;
-		this.dataKoniec = dataKoniec;
-		this.czasStart = czasStart;
-		this.czasKoniec = czasKoniec;
-		this.tempOd = tempOd;
-		this.tolerancja = tolerancja;
-		this.numerRej = numerRej;
-		this.czas = czas;
-	}
-
-
-
-	public String generuj() {
-		String dataCzasStart = dataStart+" "+czasStart;
-		String dataCzasKoniec = dataKoniec+" "+czasKoniec;
-		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-		DateTimeFormatter godzinyMinuty = DateTimeFormatter.ofPattern("HH:mm");
-		DateTimeFormatter dzienMiesiacRok = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		
-		
-		LocalDateTime start = LocalDateTime.parse(dataCzasStart, formatter);
-		LocalDateTime koniec = LocalDateTime.parse(dataCzasKoniec, formatter);
-		
-		LocalDateTime tmp = LocalDateTime.of
-				(start.getYear(), start.getMonth(), start.getDayOfMonth(), 23, 59);
-		
-		StringBuilder txt = new StringBuilder();
-		Temp temp = new Temp(tempOd, tolerancja);
-		
-		txt.append("N I C O \n");
-		txt.append(numerRej+" "+NumeryRej.numerySeria().get(numerRej)+"\n");
-		txt.append(start.toString()+"\n");
-		txt.append("T1 SENSOR 1 \n");
-		txt.append("T2 SENSOR 2 \n");
-		txt.append("         T1     T2 \n");
-		do {
-			if(start.isAfter(tmp))
-			{
-				txt.append(tmp.format(dzienMiesiacRok));
-				txt.append("\n");
-				tmp = tmp.plusDays(1);
-			}
-			txt.append(start.format(godzinyMinuty));
-			txt.append("    ");
-			//txt.append(rand.nextDouble()* tempDo);
-			txt.append("  ");
-			txt.append(temp.generujTemp());
-			txt.append("\n");
-			start = start.plusMinutes(czas);
-		}while(start.isBefore(koniec));
-			
-		 
-		return txt.toString();
-		
-	}
-	
-	public TextFlow GenerujTxtFlowNag()
 	{
 		String dataCzasStart = dataStart+" "+czasStart;
 		String dataCzasKoniec = dataKoniec+" "+czasKoniec;
@@ -105,12 +39,13 @@ public class Generuj {
 		StringBuilder reszta = new StringBuilder();
 		Temp temp = new Temp(tempOd, tolerancja);
 		
+		nag.append("A b c d e f \n");
 		nag.append("N I C O \n");
 		nag.append(numerRej+" "+NumeryRej.numerySeria().get(numerRej)+"\n");
 		nag.append(start.toString()+"\n");
-		nag.append("T1 SENSOR 1 \n");
+		nag.append("T1 Sensor 1 \n");
 		nag.append("T2 SENSOR 2 \n");
-		nag.append("         T1     T2 \n");
+		reszta.append("          T1     T2 \n");
 		do {
 			if(start.isAfter(tmp))
 			{
@@ -119,9 +54,11 @@ public class Generuj {
 				tmp = tmp.plusDays(1);
 			}
 			reszta.append(start.format(godzinyMinuty));
-			reszta.append("    ");
+			reszta.append("   ");
 			//txt.append(rand.nextDouble()* tempDo);
 			reszta.append("  ");
+			reszta.append(temp.generujTemp());
+			reszta.append("   ");
 			reszta.append(temp.generujTemp());
 			reszta.append("\n");
 			start = start.plusMinutes(czas);
@@ -129,12 +66,24 @@ public class Generuj {
 		
 		Text naglowek = new Text(nag.toString());
 		Text reszta_txt = new Text(reszta.toString());
+		this.naglowek = naglowek;
+		this.reszta_txt = reszta_txt;
 		
-		naglowek.setFont(Font.font("Helvetica", FontWeight.BOLD, 10));
-		reszta_txt.setFont(Font.font("Helvetica", FontWeight.LIGHT, 7));
-		TextFlow ret = new TextFlow();
-		ret.getChildren().addAll(naglowek, reszta_txt);
-		
-		return ret;
+		nag.append(reszta.toString());
+		generuj = nag.toString();
+	}
+
+	public TextFlow wydruk()
+	{
+		naglowek.setFont(Font.font("Calibri Light", FontWeight.BLACK, 10));
+		reszta_txt.setFont(Font.font("Calibri Light", FontWeight.EXTRA_LIGHT, 7));
+		TextFlow wydruk = new TextFlow();
+		wydruk.getChildren().addAll(naglowek, reszta_txt);
+		return wydruk;
+	}
+	
+	public String generuj1()
+	{
+		return generuj;
 	}
 }

@@ -67,7 +67,7 @@ public class MainPaneController implements Initializable  {
 					printtext.setFont(Font.font ("Verdana", 7));
 					printtext.setFill(Color.RED);
 					TextFlow printArea = new TextFlow(printtext);
-					Drukuj.printSetup(contentPaneController.getPodgladText(), printArea);
+					Drukuj.printSetup(contentPaneController.getPodgladText(), a.wydruk());
 				} 
 				);
 	
@@ -90,7 +90,7 @@ public class MainPaneController implements Initializable  {
 				String numerR = contentPaneController.getNumeryRej().getValue();
 				
 				Generuj a = new Generuj(dataS, czasS, dataK, czasK, tempS, tempTolerancja, czas, numerR);
-				contentPaneController.getPodgladText().setText(a.generuj());
+				contentPaneController.getPodgladText().setText(a.generuj1());
 				
 			}
 		});	
