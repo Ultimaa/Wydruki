@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.wydruki.controller.MenuPaneController">
+   <children>
+      <MenuBar AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Plik">
+            <items>
+                  <MenuItem fx:id="close" mnemonicParsing="false" text="Zamknij" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edytuj">
+            <items>
+              <MenuItem fx:id="setErase" mnemonicParsing="false" text="Dodaj/Usuń numery rej." />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="aboutApp" mnemonicParsing="false" text="O aplikacji" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

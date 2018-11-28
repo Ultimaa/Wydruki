@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane dividerPositions="0.5050167224080268" stylesheets="@style.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.wydruki.controller.ContentPaneController">
+  <items>
+    <AnchorPane SplitPane.resizableWithParent="false">
+         <children>
+            <Label layoutX="28.0" layoutY="64.0" text="Do:" AnchorPane.leftAnchor="28.0" />
+            <Label layoutX="28.0" layoutY="21.0" text="Od:" AnchorPane.leftAnchor="28.0" />
+            <JFXDatePicker fx:id="odData" layoutX="68.0" layoutY="16.0" />
+            <JFXTimePicker fx:id="odCzas" layoutX="239.0" layoutY="16.0" />
+            <JFXDatePicker fx:id="doData" layoutX="68.0" layoutY="58.0" />
+            <JFXTimePicker fx:id="doCzas" layoutX="239.0" layoutY="59.0" />
+            <Label layoutX="28.0" layoutY="112.0" text="Numer Rejestracyjny: " AnchorPane.leftAnchor="28.0" />
+            <ComboBox fx:id="numeryRej" layoutX="221.0" layoutY="108.0" prefHeight="25.0" prefWidth="171.0" />
+            <Label layoutX="28.0" layoutY="162.0" text="Temperatura:" AnchorPane.leftAnchor="28.0" />
+            <ComboBox fx:id="tempOd" layoutX="221.0" layoutY="158.0" prefHeight="25.0" prefWidth="75.0" />
+            <ComboBox fx:id="tempTolerancja" layoutX="314.0" layoutY="158.0" prefHeight="25.0" prefWidth="75.0" />
+            <Label layoutX="324.0" layoutY="141.0" text="Tolerancja" />
+            <Button id="refresh" fx:id="refresh" layoutX="396.0" layoutY="108.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="29.0" />
+            <Label layoutX="27.0" layoutY="209.0" text="Przedział czasu:" />
+            <ComboBox fx:id="czas" layoutX="221.0" layoutY="205.0" prefHeight="25.0" prefWidth="75.0" />
+            <Label layoutX="304.0" layoutY="209.0" text="min" />
+         </children></AnchorPane>
+    <AnchorPane SplitPane.resizableWithParent="false">
+         <children>
+            <TextArea fx:id="podgladText" editable="false" layoutX="-30.0" layoutY="14.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

@@ -1,0 +1,17 @@
+/* T³o przycisków */
+#refresh {
+	-fx-background-image: url("../img/refresh.png");
+}
+
+.button{
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+	-fx-background-size: 70% 70%; 
+	-fx-background-color: transparent;
+	-fx-opacity: 60%;
+}
+
+.button:hover,
+.button:selected {
+	-fx-opacity: 100%;
+}
